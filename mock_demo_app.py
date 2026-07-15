@@ -2,7 +2,7 @@
 情绪识别与关怀助手 (API Mock Demo)
 前端负责人 - 成员4 开发
 
-调用成员3（单嵩然）设计的 Mock 接口 /v1/agent/analyze
+调用成员3设计的 Mock 接口 /v1/agent/analyze
 实现图片上传 + 文本输入 -> 多模态情绪分析 -> 智能回复的完整交互流程
 """
 
@@ -32,7 +32,9 @@ st.set_page_config(
 
 st.title("🎭 情绪识别与关怀助手 (API Mock Demo)")
 st.markdown("---")
-st.markdown("上传一张人脸图片，输入你当前的心情描述，AI 将为你进行多模态情绪分析并给出关怀建议。")
+st.markdown(
+    "上传一张人脸图片，输入你当前的心情描述，AI 将为你进行多模态情绪分析并给出关怀建议。"
+)
 
 
 # ============================================================
@@ -120,7 +122,9 @@ if st.button("🚀 开始分析", use_container_width=True, type="primary"):
     if result.get("code") == 200:
         st.success("✅ 分析完成！")
     else:
-        st.warning(f"⚠️ 接口返回非成功状态：code={result.get('code')}, msg={result.get('msg')}")
+        st.warning(
+            f"⚠️ 接口返回非成功状态：code={result.get('code')}, msg={result.get('msg')}"
+        )
 
     # ============================================================
     # 结果展示区
